@@ -17,4 +17,3 @@ To run a local Gitbook server, run the following command on the project's root d
 ```bash
 gitbook serve
 ```
-

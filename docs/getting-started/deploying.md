@@ -38,11 +38,10 @@ If you are having trouble pushing your code, make sure to check your `screeps.js
 
 For `"pserver"` the json properties are a little confusing:
 
-- `"email"` should actually contain the username of your account on the private server you are trying to connect to, __which may be different from your account on the official Screeps shards!__
+-   `"email"` should actually contain the username of your account on the private server you are trying to connect to, **which may be different from your account on the official Screeps shards!**
 
-- `"password"` will need to be set for that account manually on the private server, [see here](https://github.com/screeps/screeps#authentication)
+-   `"password"` will need to be set for that account manually on the private server, [see here](https://github.com/screeps/screeps#authentication)
 
-- `"hostname"` is the IP address of the server. If you are hosting your own server locally, the default localhost IP for most networks is `127.0.0.1`
+-   `"hostname"` is the IP address of the server. If you are hosting your own server locally, the default localhost IP for most networks is `127.0.0.1`
 
 Ready for something extra? [Read on.](../in-depth/module-bundling.md)
-

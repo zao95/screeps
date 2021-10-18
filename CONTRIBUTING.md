@@ -22,6 +22,6 @@ To keep your fork of in sync with this repository, [follow this guide](https://h
 
 We accept almost all pull requests, as long as the following criterias are met:
 
-* Your code must pass all of the linter checks (`npm run lint`)
-* When adding a new feature, make sure it doesn't increase the complexity of the tooling. We want this starter kit to be approachable to folks who have little to no knowledge of TypeScript, or even JavaScript.
-* When making changes that are potentially breaking, careful discussion must be done with the community at large. Generally we do this either on the [#typescript](https://screeps.slack.com/messages/typecript/) channel on the Screeps Slack, or on the corresponding pull request discussion thread.
+-   Your code must pass all of the linter checks (`npm run lint`)
+-   When adding a new feature, make sure it doesn't increase the complexity of the tooling. We want this starter kit to be approachable to folks who have little to no knowledge of TypeScript, or even JavaScript.
+-   When making changes that are potentially breaking, careful discussion must be done with the community at large. Generally we do this either on the [#typescript](https://screeps.slack.com/messages/typecript/) channel on the Screeps Slack, or on the corresponding pull request discussion thread.

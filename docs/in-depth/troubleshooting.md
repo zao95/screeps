@@ -16,8 +16,7 @@ Make sure you have [screepsmod-auth](https://github.com/ScreepsMods/screepsmod-a
 
 Make sure you declare any extensions to the type interfaces as an [_ambient declaration_](https://stackoverflow.com/a/40916055). You can either:
 
-* put them inside a `*.d.ts` file, or
-* in an existing `.ts` file \(with at least one `import` or `export`\), you can use `declare global { interface CreepMemory { ... } }` to accomplish the same effect.
+-   put them inside a `*.d.ts` file, or
+-   in an existing `.ts` file \(with at least one `import` or `export`\), you can use `declare global { interface CreepMemory { ... } }` to accomplish the same effect.
 
 **For more info:** [https://github.com/screepers/typed-screeps/issues/27](https://github.com/screepers/typed-screeps/issues/27)
-

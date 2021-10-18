@@ -14,12 +14,12 @@ The `--strict` compiler flag was introduced in TypeScript 2.3 which activates Ty
 
 As of TypeScript 2.7, the affected options are:
 
-* `--noImplicitAny`
-* `--noImplicitThis`
-* `--alwaysStrict`
-* `--strictNullChecks`
-* `--strictFunctionTypes`
-* `--strictPropertyInitialization`
+-   `--noImplicitAny`
+-   `--noImplicitThis`
+-   `--alwaysStrict`
+-   `--strictNullChecks`
+-   `--strictFunctionTypes`
+-   `--strictPropertyInitialization`
 
 Starting from version 2.0 of the starter kit, we've enabled the `--strict` flag in `tsconfig.json`. If this gives you compile time errors, you can try setting `"strict"` to `false`, or by overriding one or more of the options listed above.
 
@@ -33,9 +33,9 @@ This project provides ESLint rules through a `.eslintrc.js` file, which extends 
 
 We've made some changes to these rules, which we considered necessary and/or relevant to a proper Screeps project:
 
-* set the [guard-for-in](https://eslint.org/docs/rules/guard-for-in) rule to `off`, it was forcing `for ( ... in ...)` loops to check if object members were not coming from the class prototype.
-* set the [no-console](https://eslint.org/docs/rules/no-console) rule to `off`, in order to allow using `console`.
-* set the [no-underscore-dangle](https://eslint.org/docs/rules/no-underscore-dangle) to `warn`.
+-   set the [guard-for-in](https://eslint.org/docs/rules/guard-for-in) rule to `off`, it was forcing `for ( ... in ...)` loops to check if object members were not coming from the class prototype.
+-   set the [no-console](https://eslint.org/docs/rules/no-console) rule to `off`, in order to allow using `console`.
+-   set the [no-underscore-dangle](https://eslint.org/docs/rules/no-underscore-dangle) to `warn`.
 
 ### Customising ESLint
 
@@ -44,4 +44,3 @@ You can also customise your `.eslintrc.js` file to match the preferences of your
 If you believe that some rules should not apply to a part of your code \(e.g. for one-off cases like having to use `require()` to include a module\), you can use flags to let ESLint know about it: [https://eslint.org/docs/user-guide/configuring/rules#disabling-rules](https://eslint.org/docs/user-guide/configuring/rules#disabling-rules)
 
 **More info about ESLint:** [https://eslint.org/](https://eslint.org/)
-

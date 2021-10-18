@@ -6,9 +6,9 @@ Screeps has recently introduced a [token-based auth system](http://blog.screeps.
 
 If you have an existing copy of your starter kit, follow these steps:
 
-* Remove the `"username"` and `"password"` keys from your `screeps.json` file, and replace them with `"token"`.
-* Upgrade `rollup-plugin-screeps` to version 0.1.1.
-* Follow the authentication steps as defined below.
+-   Remove the `"username"` and `"password"` keys from your `screeps.json` file, and replace them with `"token"`.
+-   Upgrade `rollup-plugin-screeps` to version 0.1.1.
+-   Follow the authentication steps as defined below.
 
 ## Setting up Screeps authentication
 
@@ -55,4 +55,3 @@ Now go to your Screeps client and check if the `main` branch is created, or if s
 It works? Good, you've successfully authenticated!
 
 Next up, we'll configure our environment and [run our first code deploy](deploying.md).
-

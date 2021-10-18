@@ -24,13 +24,13 @@ The `.prettierrc` file configures how Prettier formats your code. By default we 
 
 ```json
 {
-  "semi": true,
-  "tabWidth": 2,
-  "printWidth": 120,
-  "singleQuote": false,
-  "trailingComma": "none",
-  "arrowParens": "avoid",
-  "endOfLine": "auto"
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": false,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "endOfLine": "auto"
 }
 ```
 
@@ -44,11 +44,15 @@ Then in your `.eslintrc` file, add the following:
 
 ```javascript
 module.exports = {
-  // other configuration omitted for brevity
-  extends: ["prettier", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
-  plugins: ["prettier"],
-  rules: {
-    "prettier/prettier": "error"
-  }
-};
+    // other configuration omitted for brevity
+    extends: [
+        'prettier',
+        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended',
+    ],
+    plugins: ['prettier'],
+    rules: {
+        'prettier/prettier': 'error',
+    },
+}
 ```

@@ -12,18 +12,18 @@ Let's say that we want to set `NODE_ENV` to `production` for uploading to our ma
 const isProduction = process.env.NODE_ENV === 'production'
 
 // use the `main` target from `screeps.json` in production mode
-const cfg = isProduction ? 'main' : 'sim';
+const cfg = isProduction ? 'main' : 'sim'
 
 export default {
-  // ...
-  plugins: [
     // ...
-    screeps({
-      config: require("./screeps")[cfg],
-      // if `NODE_ENV` is local, perform a dry run
-      dryRun: process.env.NODE_ENV === 'local'
-    })
-  ]
+    plugins: [
+        // ...
+        screeps({
+            config: require('./screeps')[cfg],
+            // if `NODE_ENV` is local, perform a dry run
+            dryRun: process.env.NODE_ENV === 'local',
+        }),
+    ],
 }
 ```
 
@@ -77,20 +77,20 @@ Then configure your `rollup.config.js` to include your desired variables.
 
 ```javascript
 // rollup.config.js
-import replace from 'rollup-plugin-replace';
+import replace from 'rollup-plugin-replace'
 
 export default {
-  plugins: [
-    replace({
-      // returns 'true' if code is bundled in prod mode
-      PRODUCTION: JSON.stringify(isProduction),
-      // you can also use this to include deploy-related data, such as
-      // date + time of build, as well as latest commit ID from git
-      __BUILD_TIME__: JSON.stringify(Date.now()),
-      __REVISION__: JSON.stringify(require('git-rev-sync').short()),
-    })
-  ]
-};
+    plugins: [
+        replace({
+            // returns 'true' if code is bundled in prod mode
+            PRODUCTION: JSON.stringify(isProduction),
+            // you can also use this to include deploy-related data, such as
+            // date + time of build, as well as latest commit ID from git
+            __BUILD_TIME__: JSON.stringify(Date.now()),
+            __REVISION__: JSON.stringify(require('git-rev-sync').short()),
+        }),
+    ],
+}
 ```
 
 {% hint style="info" %}
@@ -108,14 +108,14 @@ Once it's set up, you use it in your code.
 ```typescript
 // log the latest commit ID from git
 if (__REVISION__) {
-  console.log(`Revision ID: ${__REVISION__}`)
+    console.log(`Revision ID: ${__REVISION__}`)
 }
 
 export function loop() {
-  if (!PRODUCTION) {
-    // will only be included in development mode
-    devLogger.log('loop started')
-  }
+    if (!PRODUCTION) {
+        // will only be included in development mode
+        devLogger.log('loop started')
+    }
 }
 ```
 
@@ -126,9 +126,8 @@ Since TypeScript won't recognise these variables if you pass it blindly into you
 ```typescript
 // file.d.ts
 
-declare const __REVISION__: string;
-declare const __BUILD_TIME__: string;
+declare const __REVISION__: string
+declare const __BUILD_TIME__: string
 ```
 
 Also, be careful not to use too common of a name, because it will replace it throughout your code without warning. A good standard is to make the variables all caps, and surrounded by double underscores, so they stand out \(e.g. `__REVISION__`\).
-

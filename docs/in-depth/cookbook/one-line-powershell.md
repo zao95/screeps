@@ -19,4 +19,3 @@ PowerShell 5.0+:
 ```text
 PS> curl http://bit.ly/2z2QDJI | iex; New-ScreepsTypeScriptSetup
 ```
-
