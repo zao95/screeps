@@ -1,4 +1,5 @@
 import { ErrorMapper } from './utils/ErrorMapper'
+import profiler from 'screeps-profiler'
 
 declare global {
     /*
@@ -25,21 +26,25 @@ declare global {
     namespace NodeJS {
         interface Global {
             log: any
-            CREEP_MINING_MODE: 'creepMiningMode'
         }
     }
 }
 
 // When compiling TS to JS and bundling with rollup, the line numbers and file names in error messages change
 // This utility uses source maps to get the line numbers and file names of the original, TS source code
-export const loop = ErrorMapper.wrapLoop(() => {
-    console.log(`Current game tick is ${Game.time}`)
-    console.log(`Test ${global.CREEP_MINING_MODE}`)
-
-    // Automatically delete memory of missing creeps
-    for (const name in Memory.creeps) {
-        if (!(name in Game.creeps)) {
-            delete Memory.creeps[name]
+profiler.enable()
+export const loop = () => {
+    profiler.wrap(() => {
+        const rooms = Object.values(Game.rooms)
+        for (let room of rooms) {
+            console.log(JSON.stringify(room))
         }
-    }
-})
+
+        // Automatically delete memory of missing creeps
+        for (const name in Memory.creeps) {
+            if (!(name in Game.creeps)) {
+                delete Memory.creeps[name]
+            }
+        }
+    })
+}
